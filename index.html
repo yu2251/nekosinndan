@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ねこ診断</title>
+    <meta name="description" content="あなたはどのねこのタイプ？ねこ診断">
+    <!-- フォント -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&display=swap" rel="stylesheet">
+    <!-- css -->
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- favicon -->
+    <link rel="icon" type="image/png" href="images/icons8-黒猫-victoruler-solid-32.png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <div id="home" class="big-bg">
+        <header class="page-header wrapper">
+            <ul class="main-nav">
+                <a class="icons1" target="_blank" href="https://icons8.com/icon/ioK5DV1dWIhO/%E9%BB%92%E7%8C%AB">黒猫</a>
+                <p class="icons1">icon by</p>
+                <a class="icons1" target="_blank" href="https://icons8.com">Icons8</a>
+                <a class="icons1" href="https://pocket-se.info/"> ポケットサウンド/効果音素材</a>
+            </ul>
+        </header>
+        <div class="home-content wrapper">
+            <h2 class="page-title">ねこ診断</h2>
+            <p id="aaa">あなたはどの猫のタイプでしょう？診断してみましょう！</p>
+            <a href="nekosindan.html" class="button" id="btn">スタート</a>
+            <div class="image_top">
+                <div class="image_top1"><img src="images/steps.png" alt=""></div>
+                <div class="image_top2"><img src="images/steps.png" alt=""></div>
+            </div>
+        </div> <!-- home-content -->
+    </div> <!-- #home -->
+
+    <script>
+
+        $("#aaa").fadeOut(0).fadeIn(1000);
+
+        $("#btn").on("click", function () {
+            $("body").css("background", "#000000");
+        });
+
+
+
+    </script>
+
+</body>
+
+
+
+</html>

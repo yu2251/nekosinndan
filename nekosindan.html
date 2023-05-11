@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ja">
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nekosindan</title>
+    <!-- フォント -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&display=swap" rel="stylesheet">
+    <!-- css -->
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- favicon -->
+    <link rel="icon" type="image/png" href="images/icons8-黒猫-victoruler-solid-32.png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</head>
+<header class="page-header wrapper">
+    <ul class="main-nav">
+        <a class="icons1" target="_blank" href="https://icons8.com/icon/ioK5DV1dWIhO/%E9%BB%92%E7%8C%AB">黒猫</a>
+        <p class="icons1">icon by</p>
+        <a class="icons1" target="_blank" href="https://icons8.com">Icons8</a>
+        <a class="icons1" href="https://pocket-se.info/"> ポケットサウンド/効果音素材</a>
+    </ul>
+</header>
+
+<body>
+
+    <!-- 診断 -->
+    <div class="choose_box home-content wrapper">
+        <ul class="main-nav">
+            <a class="TOP" target="_blank" href="index.html">スタート画面に戻る</a>
+        </ul>
+        <!-- 診断パターン１ -->
+        <!-- 最初の選択肢 -->
+        <div id="q_01" class="fit" style="display: none;">
+            <p>質問1 新しい人と出会った時、自分から積極的に話しかけますか？</p>
+            <ul class="flexbox fw">
+                <li class="even"><a class="btn" href="#q_02">YES</a></li>
+                <li class="odd"><a class="btn" href="#q_04">NO</a></li>
+            </ul>
+        </div>
+
+        <!-- 次の選択肢 -->
+        <div id="q_02" style="display: none;">
+            <p>質問2 健康的な体型を維持するために、食事や運動に気を使っていますか？</p>
+            <ul class="flexbox fw">
+                <li class="even"><a class="btn" href="#q_03">YES</a></li>
+                <li class="odd"><a class="btnF0 btn" href="#q_06">NO</a></li>
+                <!-- キジ白 -->
+            </ul>
+        </div>
+
+        <!-- 次の選択肢 -->
+        <div id="q_03" style="display: none;">
+            <p>質問3 読書や勉強、知的な活動をすることが好きですか？</p>
+            <ul class="flexbox fw">
+                <li class="even"><a class="btnF1 btn" href="#q_06">YES</a></li>
+                <!-- タビ -->
+                <li class="odd"><a class="btnF2 btn" href="#q_06">NO</a></li>
+                <!-- サビ -->
+            </ul>
+        </div>
+
+        <!-- 次の選択肢 -->
+        <div id="q_04" style="display: none;">
+            <p>質問2 運動することが好きですか？</p>
+            <ul class="flexbox fw">
+                <li class="even"><a class="btnF3 btn" href="#q_06">YES</a></li>
+                <!-- 黒 -->
+                <li class="odd"><a class="btnF4 btn" href="#q_06">NO</a></li>
+                <!-- 白 -->
+            </ul>
+        </div>
+
+        <!-- 診断パターン２-->
+        <div id="q_001" class="fit" style="display: none;">
+            <p>質問1 ストレスを感じることが少ない方ですか？★</p>
+            <ul class="flexbox fw">
+                <li class="even"><a class="btn" href="#q_002">YES</a></li>
+                <li class="odd"><a class="btn" href="#q_003">NO</a></li>
+            </ul>
+        </div>
+
+        <!-- 次の選択肢 -->
+        <div id="q_002" style="display: none;">
+            <p>質問2 健康的な体型を維持するために、食事や運動に気を使っていますか？</p>
+            <ul class="flexbox fw">
+                <li class="even"><a class="btnF2 btn" href="#q_06">YES</a></li>
+                <!-- サビ -->
+                <li class="odd"><a class="btnF4 btn" href="#q_06">NO</a></li>
+                <!-- 白 -->
+            </ul>
+        </div>
+
+        <!-- 次の選択肢 -->
+        <div id="q_003" style="display: none;">
+            <p>質問2 人からサポートや励ましを受けることが好きですか？</p>
+            <ul class="flexbox fw">
+                <li class="even"><a class="btn" href="#q_004">YES</a></li>
+                <li class="odd"><a class="btnF3 btn" href="#q_06">NO</a></li>
+                <!-- 黒 -->
+            </ul>
+        </div>
+
+        <!-- 次の選択肢 -->
+        <div id="q_004" style="display: none;">
+            <p>質問2 運動することが好きですか？</p>
+            <ul class="flexbox fw">
+                <li class="even"><a class="btnF1 btn" href="#q_06">YES</a></li>
+                <!-- タビ -->
+                <li class="odd"><a class="btnF0 btn" href="#q_06">NO</a></li>
+                <!-- キジ白 -->
+            </ul>
+        </div>
+
+        <!-- 診断結果 -->
+        <div id="q_06" style="display: none;">
+            <p style="font-weight: 450;">あなたの性格は…</p>
+            <div class="result_Box">
+                <h3 id="result"></h3>
+                <div class="image"><img src="" alt=""></div>
+            </div>
+            <audio id="audio">
+                <source src="musics/cat26.mp3" type="audio/mp3">
+            </audio>
+
+        </div>
+    </div>
+
+
+    <script>
+        // 最初の質問2パターンのうちどちらかをランダムに出現
+        $(function () {
+            const min = 0;
+            const max = 1;
+            const randomNumber = Math.floor((Math.random()) * (max - min + 1)) + min;
+            console.log(randomNumber);
+
+            if (randomNumber <= 0) {
+                $("#q_01").css('display', ' block');
+            } else {
+                $("#q_001").css('display', ' block');
+            }
+        });
+
+        // 質問２以降
+        $(function () {
+            $(".btn").on("click", function () {
+                $(this).closest("div").css("display", "none");
+                id = $(this).attr("href");
+                $(id).addClass("fit").fadeIn(1000);
+            });
+        });
+
+        //診断結果 
+        const result1 = ["キジ白", "タビー", "サビ", "黒", "白"];
+        const result2 = ["キジ白猫は、陽気で社交的な性格が特徴的です。\n人懐っこく、知らない人にも積極的に接します。また、好奇心旺盛で冒険心があり、新しいことに挑戦するのが好きです。",
+            "タビー猫は、活発で社交的な性格が特徴的です。\nしっかりとした自己主張を持ち、自分に興味を持ってくれる人には積極的に接します。好奇心が旺盛で、物事を探求するのが好きです。また、独立心が強く、自由を愛する傾向があります。",
+            "サビ猫は、活発でエネルギッシュな性格が特徴的です。\n独立心が強く、自由を愛する傾向があります。また、好奇心が旺盛で、自分のペースで物事を進めることが多いでしょう。",
+            "黒猫は、神秘的で独特の魅力を持った存在です。\n警戒心が強く、周囲の様子をよく観察します。自分に対して敬意を払ってくれる人には忠実で、とても信頼できる一面もあるでしょう。",
+            "白猫は、控えめで落ち着いた性格が特徴的です。\n内向的である一方、人懐っこく友好的な性格も持っています。穏やかで優しい性格が多く、人々を癒す存在として親しまれています。"];
+        const images = ["images/kizisiro.jpg",
+            "./images/tabi-.jpg",
+            "./images/sabi.jpg",
+            "./images/kuro.jpg",
+            "./images/siro.jpg"];
+        let str = "";
+
+        // キジ白の結果
+        $(function () {
+            $(".btnF0").on("click", function () {
+                str = `『${result1[0]}猫』です！`;
+                $("#result").text(str);
+                $("#result").append(`<br>${result2[0]}`);
+                $('.image').children('img').attr('src', 'images/kizisiro.jpg');
+                $('.image').css('text-align', 'center');
+                $('#audio').get(0).play(1);
+
+            });
+        });
+        // タビーの結果
+        $(function () {
+            $(".btnF1").on("click", function () {
+                str = `『${result1[1]}猫』です！`;
+                $("#result").text(str);
+                $("#result").append(`<br>${result2[1]}`);
+                $('.image').children('img').attr('src', 'images/tabi-.jpg');
+                $('.image').css('text-align', 'center');
+                $('#audio').get(0).play(1);
+            });
+        });
+        // サビの結果
+        $(function () {
+            $(".btnF2").on("click", function () {
+                str = `『${result1[2]}猫』です！`;
+                $("#result").text(str);
+                $("#result").append(`<br>${result2[2]}`);
+                $('.image').children('img').attr('src', 'images/sabi.jpg');
+                $('.image').css('text-align', 'center');
+                $('#audio').get(0).play(1);
+            });
+        });
+        // 黒の結果
+        $(function () {
+            $(".btnF3").on("click", function () {
+                str = `『${result1[3]}猫』です！`;
+                $("#result").text(str);
+                $("#result").append(`<br>${result2[3]}`);
+                $('.image').children('img').attr('src', 'images/kuro.jpg');
+                $('.image').css('text-align', 'center');
+                $('#audio').get(0).play(1);
+            });
+        });
+        // 白の結果
+        $(function () {
+            $(".btnF4").on("click", function () {
+                str = `『${result1[4]}猫』です！`;
+                $("#result").text(str);
+                $("#result").append(`<br>${result2[4]}`);
+                $('.image').children('img').attr('src', 'images/siron.jpg');
+                $('.image').css('text-align', 'center');
+                $('#audio').get(0).play(1);
+            });
+        });
+    </script>
+
+</body>
+
+</html>

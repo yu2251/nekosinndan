@@ -1,0 +1,265 @@
+@charset "UTF-8";
+
+/* 共通部分 */
+html {
+    font-size: 100%;
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    font-family: 'Sawarabi Mincho', "Yu Gothic Medium", "遊ゴシック体", "ヒラギノ角ゴ Pro W3", sans-serif;
+    line-height: 1.7;
+    color: #432;
+    background-color: #f8f4e6;
+}
+
+h2 {
+    font-family: 'Sawarabi Mincho', serif;
+}
+
+a {
+    font-family: 'Sawarabi Mincho', serif;
+    text-decoration: none;
+}
+
+img {
+    max-width: 50%;
+    max-height: 50%;
+}
+
+/* header */
+
+/*Top画面移動 */
+.main-nav {
+    display: flex;
+    text-align: right;
+    font-size: 1.25ren;
+    text-transform: uppercase;
+    margin-top: 50px;
+    list-style: none;
+}
+
+.main-nav li {
+    margin-left: 36px;
+    display: inline;
+
+}
+
+.main-nav a {
+    color: #432;
+    display: inline;
+}
+
+.main-nav a:hover {
+    color: #0bd;
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 4%;
+}
+
+/* home */
+.home-content {
+    text-align: center;
+    margin-top: 10%;
+}
+
+.home-content p {
+    font-size: 1.125rem;
+    margin: 10px 0 42px;
+}
+
+.icons1 {
+    font-size: 5px;
+}
+
+.image_top1 {
+    text-align: center;
+}
+
+.image_top2 {
+    text-align: right;
+}
+
+/* 見出し */
+.page-title {
+    font-size: 5rem;
+    font-family: 'Sawarabi Mincho', 'Philosopher', serif;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/* ボタン */
+.button {
+    font-size: 1.375rem;
+    background: #432;
+    color: #fff;
+    border: 2px solid #432;
+    border-radius: 5px;
+    padding: 18px 32px;
+}
+
+.button:hover {
+    background: #fff;
+    color: #432;
+    border: 2px solid #432;
+    -webkit-transition: 0.7s;
+    -moz-transition: 0.7s;
+    -o-transition: 0.7s;
+    transition: 0.7s;
+}
+
+#home {
+    background-image: url();
+    background-position: 30%;
+    min-height: 100vh;
+}
+
+#home .page-title {
+    text-transform: none;
+}
+
+/* 診断 */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Sawarabi Mincho", "Yu Gothic Medium", "遊ゴシック体", "ヒラギノ角ゴ Pro W3", sans-serif;
+    color: #432;
+}
+
+
+
+.choose_box {
+    margin-top: 30px;
+    position: relative;
+    height: 50vw;
+    width: 100%;
+}
+
+.choose_box p {
+    font-size: 24px;
+    display: block;
+    font-weight: 450;
+    text-align: center;
+}
+
+.choose_box ul {
+    width: 80%;
+    text-align: center;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.choose_box ul li {
+    width: calc(100% / 2 - 20px);
+    margin-right: 20px;
+    margin-bottom: 20px;
+    margin-top: 70px;
+    list-style: none;
+}
+
+.choose_box ul li:nth-child(2n) {
+    margin-right: 0;
+}
+
+.choose_box ul li a {
+    color: #fff;
+    display: block;
+    padding: 20px 60px;
+    text-align: center;
+    background-color: #432;
+    font-weight: 450;
+    font-size: 25px;
+    border: 2px solid #432;
+    text-decoration: none;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+}
+
+.choose_box ul li a:hover {
+    background-color: #fff;
+    color: #432;
+    -webkit-transition: 0.7s;
+    -moz-transition: 0.7s;
+    -o-transition: 0.7s;
+    transition: 0.7s;
+}
+
+h3 {
+    width: 50%;
+    clear: both;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 500;
+    color: #fff;
+    background-color: #432;
+}
+
+.fit {
+    position: absolute;
+    left: 0px;
+    top: 20px;
+    width: 100%;
+}
+
+/* 診断結果 */
+#q_06 span {
+    display: block;
+    width: 100%;
+}
+
+#q_06 a {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.result {
+    font-size: 2vh;
+}
+
+/* モバイル版 */
+@media (max-width:600px) {
+    .page-title {
+        font-size: 2.5rem;
+    }
+
+    /* header */
+    .main-nav {
+        font-size: 1rem;
+        margin-top: 10px;
+    }
+
+    .main-nav li {
+        margin: 0 20px;
+    }
+
+    /* home */
+    .home-content {
+        margin-top: 20%;
+    }
+
+
+    .page-header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .page-title {
+        margin-top: 30px;
+    }
+
+}
